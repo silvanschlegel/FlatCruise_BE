@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: backend
+  datasource:
+    url: jdbc:postgresql://localhost:5432/flatcruise
+    username: flatcruise
+    password: flatcruise
+  jpa:
+    hibernate:
+      ddl-auto: validate
+  flyway:
+    enabled: true
+
+server:
+  port: 8080
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health
+      cors:
+        allowed-origins: "http://localhost:8081,http://127.0.0.1:8081"
+        allowed-methods: "GET,OPTIONS"
+        allowed-headers: "*"
